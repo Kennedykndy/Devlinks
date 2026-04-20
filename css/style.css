@@ -1,12 +1,11 @@
 * {
-  color: white;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  --text-color: White;
+  --text-color: white;
   --bg-url: url(/assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
@@ -28,11 +27,10 @@
 body {
   background: var(--bg-url) no-repeat center center/cover;
   height: 100vh;
-}
 
-body {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
+  transition: all 0.3s ease;
 }
 
 .container {
@@ -44,23 +42,24 @@ body {
 
 /* Perfil */
 
-.profile {
+#profile {
   text-align: center;
   padding: 24px;
 }
 
-.profile img {
+#profile img {
   width: 112px;
 }
 
-.profile p {
+#profile p {
   font-weight: 500;
   line-height: 24px;
   margin-top: 8px;
 }
 
-.profile a {
+#profile a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 /* switch */
@@ -85,6 +84,12 @@ body {
   transform: translateY(-50%);
 
   animation: slide-back 0.2s;
+  transition: all 0.3s;
+}
+
+.light #switch button {
+  left: 50%;
+  animation: slide-in 0.2s;
 }
 
 .light #switch button:hover {
@@ -101,6 +106,8 @@ body {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
+
+/* Links */
 
 ul {
   list-style: none;
@@ -123,8 +130,9 @@ ul li a {
 
   text-decoration: none;
   font-weight: 500;
+  color: var(--text-color);
 
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 ul li a:hover {
@@ -135,7 +143,6 @@ ul li a:hover {
 /* Social links */
 
 #social-links {
-  color: white;
   display: flex;
   justify-content: center;
   padding: 24px 0;
@@ -147,6 +154,7 @@ ul li a:hover {
   align-items: center;
   justify-content: center;
   padding: 16px;
+  color: var(--text-color);
 
   transition: background 0.2s;
   border-radius: 50%;
@@ -156,13 +164,21 @@ ul li a:hover {
   background: var(--highlight-color);
 }
 
+/* Footer */
+
 footer {
   padding: 24px;
   text-align: center;
   font-size: 14px;
 }
 
+footer a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
 /* media queries */
+
 @media (min-width: 700px) {
   :root {
     --bg-url: url(/assets/bg-desktop.jpg);
@@ -174,6 +190,7 @@ footer {
 }
 
 /* Animations */
+
 @keyframes slide-in {
   from {
     left: 0;
@@ -182,6 +199,7 @@ footer {
     left: 50%;
   }
 }
+
 @keyframes slide-back {
   from {
     left: 50%;
