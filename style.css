@@ -6,41 +6,42 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(/assets/bg-mobile.jpg);
+  --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
-  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
-  --switch-br-url: url(/assets/moon-stars.svg);
+  --switch-br-url: url(./assets/moon-stars.svg);
 }
 
 .light {
   --text-color: black;
-  --bg-url: url(/assets/bg-mobile-light.jpg);
+  --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.2);
-  --switch-br-url: url(/assets/sun.svg);
+  --switch-br-url: url(./assets/sun.svg);
 }
 
 body {
-  background: var(--bg-url) no-repeat center center/cover;
+  background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
+}
 
+body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
-  transition: all 0.3s ease;
 }
 
 .container {
   width: 100%;
   max-width: 588px;
   margin: 56px auto 0px;
-  padding: 0px 24px;
+  padding: 0 24px;
 }
 
-/* Perfil */
+/*Perfil*/
 
 #profile {
   text-align: center;
@@ -59,7 +60,6 @@ body {
 
 #profile a {
   text-decoration: none;
-  color: var(--text-color);
 }
 
 /* switch */
@@ -73,7 +73,7 @@ body {
 #switch button {
   width: 32px;
   height: 32px;
-  background: white var(--switch-br-url) no-repeat center center;
+  background: white var(--switch-br-url) no-repeat center;
   border: 0;
   border-radius: 50%;
 
@@ -83,13 +83,11 @@ body {
   z-index: 1;
   transform: translateY(-50%);
 
-  animation: slide-back 0.2s;
-  transition: all 0.3s;
+  transition: left 0.2s;
 }
 
 .light #switch button {
-  left: 50%;
-  animation: slide-in 0.2s;
+  left: 32px;
 }
 
 .light #switch button:hover {
@@ -108,12 +106,13 @@ body {
 }
 
 /* Links */
-
 ul {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  padding: 24px 0;
 }
 
 ul li a {
@@ -130,9 +129,8 @@ ul li a {
 
   text-decoration: none;
   font-weight: 500;
-  color: var(--text-color);
 
-  transition: all 0.2s;
+  transition: background 0.2s;
 }
 
 ul li a:hover {
@@ -141,7 +139,6 @@ ul li a:hover {
 }
 
 /* Social links */
-
 #social-links {
   display: flex;
   justify-content: center;
@@ -154,7 +151,6 @@ ul li a:hover {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  color: var(--text-color);
 
   transition: background 0.2s;
   border-radius: 50%;
@@ -164,33 +160,24 @@ ul li a:hover {
   background: var(--highlight-color);
 }
 
-/* Footer */
-
 footer {
   padding: 24px;
   text-align: center;
   font-size: 14px;
 }
 
-footer a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
 /* media queries */
-
 @media (min-width: 700px) {
   :root {
-    --bg-url: url(/assets/bg-desktop.jpg);
+    --bg-url: url(./assets/bg-desktop.jpg);
   }
 
   .light {
-    --bg-url: url(/assets/bg-desktop-light.jpg);
+    --bg-url: url(./assets/bg-desktop-light.jpg);
   }
 }
 
-/* Animations */
-
+/* animation */
 @keyframes slide-in {
   from {
     left: 0;
@@ -199,7 +186,6 @@ footer a {
     left: 50%;
   }
 }
-
 @keyframes slide-back {
   from {
     left: 50%;
